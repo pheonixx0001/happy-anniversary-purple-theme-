@@ -1,0 +1,3084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ananta ♡ Six Months</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+:root{
+    --purple:#9b5cff;
+    --violet:#6e35d9;
+    --deep:#090314;
+    --pink:#ff72d2;
+    --cyan:#8ceaff;
+    --white:#f8f2ff;
+    --muted:#b8a9ca;
+
+    /* CHANGE YOUR BACKGROUND HERE */
+    --bg-image:url("YOUR-BACKGROUND-HERE.jpg");
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07020e;
+    color:var(--white);
+    font-family:Manrope,sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND IMAGE */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background-image:
+        linear-gradient(
+            rgba(7,2,14,.42),
+            rgba(7,2,14,.68)
+        ),
+        var(--bg-image);
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    filter:saturate(1.15);
+}
+
+/* PURPLE ATMOSPHERE */
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-9;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(130,50,255,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,80,220,.13),
+            transparent 28%
+        );
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+#loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    background:#06020c;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    transition:opacity 1s ease, visibility 1s ease;
+}
+
+#loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-ring{
+    width:90px;
+    height:90px;
+
+    border:1px solid rgba(255,255,255,.15);
+    border-top-color:var(--purple);
+    border-right-color:var(--pink);
+
+    border-radius:50%;
+
+    animation:spin 1.2s linear infinite;
+
+    box-shadow:
+        0 0 35px rgba(155,92,255,.4);
+}
+
+.loader-text{
+    margin-top:25px;
+
+    font-family:"DM Mono",monospace;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#cbbde0;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+
+/* =========================================================
+   CANVAS
+   ========================================================= */
+
+#space{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   NAV
+   ========================================================= */
+
+.nav{
+    position:fixed;
+    top:22px;
+    left:50%;
+    transform:translateX(-50%);
+
+    z-index:1000;
+
+    padding:10px 18px;
+
+    display:flex;
+    gap:8px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50px;
+
+    background:rgba(10,3,20,.58);
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.3);
+}
+
+.nav button{
+    border:0;
+    background:transparent;
+    color:#a99ab9;
+
+    padding:8px 13px;
+
+    border-radius:30px;
+
+    font-family:"DM Mono",monospace;
+    font-size:9px;
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.nav button:hover{
+    color:white;
+    background:rgba(155,92,255,.15);
+}
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+section{
+    min-height:100vh;
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:100px 22px;
+}
+
+.container{
+    width:min(1100px,100%);
+    margin:auto;
+}
+
+.eyebrow{
+    font-family:"DM Mono",monospace;
+    color:#bca5dc;
+    font-size:10px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(48px,8vw,100px);
+    line-height:.88;
+    font-weight:500;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        110deg,
+        #fff,
+        #c18aff,
+        #ff91dc,
+        #fff
+    );
+
+    background-size:250%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%,100%{background-position:0%}
+    50%{background-position:100%}
+}
+
+.sub{
+    color:#b9acc8;
+    font-size:14px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+.glass{
+    border:1px solid rgba(255,255,255,.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(120,50,200,.06)
+        );
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 100px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.08);
+
+    border-radius:28px;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.magic-btn{
+    border:1px solid rgba(255,255,255,.2);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(155,92,255,.22),
+            rgba(255,100,210,.15)
+        );
+
+    color:white;
+
+    padding:15px 24px;
+
+    border-radius:50px;
+
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+        0 0 30px rgba(155,92,255,.12);
+}
+
+.magic-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 50px rgba(155,92,255,.35);
+}
+
+
+/* =========================================================
+   01 — AWAKENING
+   ========================================================= */
+
+#opening{
+    text-align:center;
+}
+
+.orbit{
+    position:absolute;
+    width:420px;
+    height:420px;
+
+    border:1px solid rgba(170,100,255,.14);
+    border-radius:50%;
+
+    animation:orbit 18s linear infinite;
+}
+
+.orbit::before{
+    content:"";
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#d7a6ff;
+
+    box-shadow:
+        0 0 20px #a35cff,
+        0 0 50px #a35cff;
+
+    top:20px;
+    left:50%;
+}
+
+.orbit.two{
+    width:570px;
+    height:570px;
+    animation-duration:27s;
+}
+
+.orbit.three{
+    width:720px;
+    height:720px;
+    animation-duration:38s;
+}
+
+@keyframes orbit{
+    to{transform:rotate(360deg);}
+}
+
+.six{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(170px,30vw,380px);
+
+    line-height:.7;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px rgba(180,100,255,.6),
+        0 0 80px rgba(155,92,255,.45),
+        0 0 160px rgba(255,80,220,.2);
+
+    position:relative;
+}
+
+.opening-text{
+    margin-top:45px;
+}
+
+.opening-text h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    font-weight:400;
+}
+
+.opening-text p{
+    margin-top:10px;
+    color:#aaa0b4;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   02 — SIGNAL
+   ========================================================= */
+
+.signal-box{
+    max-width:720px;
+    padding:50px;
+    margin:auto;
+}
+
+.terminal{
+    font-family:"DM Mono",monospace;
+    color:#c9a9ff;
+    font-size:12px;
+    line-height:2.2;
+}
+
+.cursor{
+    display:inline-block;
+    width:7px;
+    height:13px;
+    background:#d18cff;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0;}
+}
+
+.signal-main{
+    margin-top:30px;
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(42px,7vw,78px);
+}
+
+.signal-heart{
+    display:inline-block;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    50%{transform:scale(1.12);}
+}
+
+
+/* =========================================================
+   03 — UNIVERSE
+   ========================================================= */
+
+.universe{
+    height:600px;
+    position:relative;
+    overflow:hidden;
+}
+
+.sun{
+    position:absolute;
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #c68bff 30%,
+            #7b35db 60%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 40px #a25aff,
+        0 0 120px rgba(155,92,255,.6),
+        0 0 220px rgba(255,80,220,.2);
+}
+
+.planet-orbit{
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+    animation:rotatePlanet linear infinite;
+}
+
+.planet-orbit:nth-child(2){
+    width:280px;
+    height:280px;
+    animation-duration:13s;
+}
+
+.planet-orbit:nth-child(3){
+    width:430px;
+    height:430px;
+    animation-duration:22s;
+}
+
+.planet-orbit:nth-child(4){
+    width:590px;
+    height:590px;
+    animation-duration:32s;
+}
+
+.planet{
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    top:0;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(circle at 30% 30%,#fff,#b55cff 45%,#49118b);
+
+    box-shadow:
+        0 0 25px rgba(170,80,255,.8);
+}
+
+@keyframes rotatePlanet{
+    to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+
+
+/* =========================================================
+   04 — ANANTA EFFECT
+   ========================================================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:45px;
+}
+
+.stat{
+    padding:27px;
+}
+
+.stat span{
+    font-family:"DM Mono",monospace;
+    font-size:9px;
+    color:#a897b9;
+    letter-spacing:2px;
+}
+
+.stat strong{
+    display:block;
+    margin-top:10px;
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    font-weight:500;
+}
+
+
+/* =========================================================
+   05 — SIX TRUTHS
+   ========================================================= */
+
+.truth-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:45px;
+}
+
+.truth{
+    min-height:220px;
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.5s;
+}
+
+.truth:hover{
+    transform:translateY(-10px) rotateX(4deg);
+
+    border-color:rgba(190,120,255,.45);
+
+    box-shadow:
+        0 25px 60px rgba(110,50,200,.18);
+}
+
+.truth-num{
+    font-family:"DM Mono",monospace;
+    color:#a56bff;
+    font-size:11px;
+}
+
+.truth p{
+    font-family:"Cormorant Garamond",serif;
+    font-size:25px;
+}
+
+
+/* =========================================================
+   06 — PICK A STAR
+   ========================================================= */
+
+.star-field{
+    height:520px;
+    position:relative;
+    overflow:hidden;
+}
+
+.star-btn{
+    position:absolute;
+
+    border:0;
+    background:white;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px #a75cff;
+
+    animation:starPulse 2s infinite alternate;
+}
+
+@keyframes starPulse{
+    to{
+        transform:scale(2);
+        opacity:.5;
+    }
+}
+
+.star-message{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%) scale(.8);
+
+    width:min(520px,90%);
+
+    padding:35px;
+
+    text-align:center;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.5s;
+}
+
+.star-message.active{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.star-message p{
+    font-family:"Cormorant Garamond",serif;
+    font-size:31px;
+}
+
+
+/* =========================================================
+   07 — GRAVITY
+   ========================================================= */
+
+.gravity-box{
+    height:560px;
+    position:relative;
+    overflow:hidden;
+}
+
+.gravity-heart{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:80px;
+    height:80px;
+
+    transform:translate(-50%,-50%) rotate(45deg);
+
+    background:linear-gradient(135deg,#a65cff,#ff75d7);
+
+    box-shadow:
+        0 0 50px rgba(180,90,255,.6);
+
+    animation:floatHeart 3s ease-in-out infinite;
+}
+
+.gravity-heart::before,
+.gravity-heart::after{
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:inherit;
+}
+
+.gravity-heart::before{
+    top:-40px;
+    left:0;
+}
+
+.gravity-heart::after{
+    left:-40px;
+    top:0;
+}
+
+@keyframes floatHeart{
+    50%{
+        margin-top:-20px;
+    }
+}
+
+.gravity-text{
+    position:absolute;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    width:90%;
+}
+
+
+/* =========================================================
+   08 — WISH
+   ========================================================= */
+
+.wish{
+    text-align:center;
+}
+
+.wish-area{
+    height:420px;
+    position:relative;
+    overflow:hidden;
+
+    margin-top:35px;
+}
+
+.shooting-star{
+    position:absolute;
+
+    width:180px;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        white,
+        #c276ff
+    );
+
+    transform:rotate(-20deg);
+
+    left:-250px;
+    top:45%;
+
+    opacity:0;
+}
+
+.shooting-star.fly{
+    animation:shoot 1.5s ease forwards;
+}
+
+@keyframes shoot{
+    0%{
+        left:-250px;
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        left:110%;
+        opacity:0;
+    }
+}
+
+.wish-reveal{
+    margin-top:35px;
+
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+
+    opacity:0;
+    transform:translateY(15px);
+
+    transition:.7s;
+}
+
+.wish-reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================================================
+   09 — LOVE.EXE
+   ========================================================= */
+
+.code-window{
+    max-width:750px;
+    margin:auto;
+
+    overflow:hidden;
+}
+
+.window-top{
+    padding:14px 18px;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    color:#8e819d;
+}
+
+.code{
+    padding:35px;
+
+    font-family:"DM Mono",monospace;
+    font-size:12px;
+    line-height:2.3;
+
+    color:#d5c8df;
+}
+
+.code .purple{
+    color:#bc7aff;
+}
+
+.code .pink{
+    color:#ff8bdc;
+}
+
+.code .cyan{
+    color:#8eeaff;
+}
+
+#typing{
+    white-space:pre-line;
+}
+
+
+/* =========================================================
+   10 — DISTANCE
+   ========================================================= */
+
+.distance-card{
+    padding:45px;
+    text-align:center;
+}
+
+.connection{
+    position:relative;
+
+    height:150px;
+
+    margin:30px 0;
+}
+
+.point{
+    position:absolute;
+
+    top:50%;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 20px #c06cff,
+        0 0 50px #9c4dff;
+}
+
+.point.left{
+    left:8%;
+}
+
+.point.right{
+    right:8%;
+}
+
+.connection-line{
+    position:absolute;
+
+    left:9%;
+    right:9%;
+    top:50%;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #b568ff,
+        #ff83dc,
+        transparent
+    );
+
+    box-shadow:
+        0 0 20px #a85cff;
+}
+
+.connection-line::after{
+    content:"";
+
+    position:absolute;
+
+    width:50px;
+    height:3px;
+
+    top:-1px;
+
+    background:white;
+
+    filter:blur(2px);
+
+    animation:signalTravel 2s linear infinite;
+}
+
+@keyframes signalTravel{
+    from{left:0;}
+    to{left:100%;}
+}
+
+.distance-text{
+    font-family:"DM Mono",monospace;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#b9a9c9;
+}
+
+
+/* =========================================================
+   11 — PATH
+   ========================================================= */
+
+.paths{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+    margin-top:50px;
+}
+
+.path{
+    min-height:300px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    text-align:center;
+}
+
+.path:hover{
+    transform:translateY(-12px);
+}
+
+.path-icon{
+    font-size:45px;
+
+    filter:
+        drop-shadow(0 0 20px #a85cff);
+
+    margin-bottom:20px;
+}
+
+.path h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    font-weight:500;
+}
+
+.path p{
+    margin-top:8px;
+    color:#9e90a9;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   12 — QUESTION
+   ========================================================= */
+
+.question{
+    text-align:center;
+}
+
+.question-box{
+    margin:45px auto 0;
+
+    width:min(700px,100%);
+
+    padding:50px;
+}
+
+.question-text{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(38px,6vw,65px);
+
+    line-height:1;
+}
+
+.answer{
+    margin-top:30px;
+
+    color:#c5b8d0;
+
+    font-family:"DM Mono",monospace;
+    font-size:11px;
+    line-height:2;
+
+    min-height:30px;
+}
+
+
+/* =========================================================
+   13 — SECRET PORTAL
+   ========================================================= */
+
+.portal-section{
+    text-align:center;
+}
+
+.portal{
+    width:260px;
+    height:260px;
+
+    margin:40px auto;
+
+    border-radius:50%;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.1),
+            rgba(125,50,220,.16) 35%,
+            transparent 68%
+        );
+
+    border:1px solid rgba(200,150,255,.3);
+
+    box-shadow:
+        0 0 40px rgba(155,92,255,.25),
+        inset 0 0 50px rgba(155,92,255,.15);
+
+    animation:portalPulse 3s infinite;
+}
+
+.portal::before,
+.portal::after{
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    animation:spin 8s linear infinite;
+}
+
+.portal::after{
+    inset:35px;
+
+    border-color:rgba(255,100,220,.18);
+
+    animation-duration:12s;
+    animation-direction:reverse;
+}
+
+@keyframes portalPulse{
+    50%{
+        box-shadow:
+            0 0 90px rgba(155,92,255,.5),
+            inset 0 0 80px rgba(155,92,255,.25);
+    }
+}
+
+.portal span{
+    position:relative;
+    z-index:3;
+
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   14 — TRANSITION
+   ========================================================= */
+
+.transition-section{
+    text-align:center;
+}
+
+.transition-text{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(42px,7vw,80px);
+
+    line-height:.95;
+
+    max-width:800px;
+}
+
+.transition-small{
+    margin-top:30px;
+
+    font-family:"DM Mono",monospace;
+
+    font-size:10px;
+
+    color:#a99ab5;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   15 — BIG LETTER
+   ========================================================= */
+
+#letter{
+    min-height:130vh;
+
+    padding-top:120px;
+    padding-bottom:150px;
+
+    align-items:flex-start;
+}
+
+.letter-wrap{
+    width:min(1000px,100%);
+}
+
+.letter-intro{
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.letter-intro .big-six{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(100px,18vw,220px);
+
+    line-height:.65;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 40px rgba(170,90,255,.5),
+        0 0 100px rgba(255,90,220,.25);
+}
+
+.letter-card{
+    padding:clamp(35px,7vw,90px);
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24,10,40,.82),
+            rgba(14,5,25,.88)
+        );
+
+    border:1px solid rgba(213,176,255,.18);
+
+    box-shadow:
+        0 40px 120px rgba(0,0,0,.5),
+        0 0 100px rgba(120,50,220,.08);
+}
+
+.letter-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-300px;
+    top:-300px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180,100,255,.18),
+            transparent 65%
+        );
+
+    pointer-events:none;
+}
+
+.letter-label{
+    font-family:"DM Mono",monospace;
+
+    font-size:9px;
+    letter-spacing:4px;
+
+    color:#aa93c1;
+
+    margin-bottom:35px;
+}
+
+.letter-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(45px,6vw,75px);
+
+    line-height:.95;
+
+    font-weight:500;
+
+    margin-bottom:55px;
+}
+
+.letter-body{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(21px,2.2vw,28px);
+
+    line-height:1.65;
+
+    color:#ddd2e5;
+}
+
+.letter-body p{
+    margin-bottom:28px;
+}
+
+.letter-body .emphasis{
+    color:white;
+
+    font-size:1.15em;
+
+    text-shadow:
+        0 0 20px rgba(180,100,255,.25);
+}
+
+.signature{
+    margin-top:70px;
+
+    text-align:right;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    color:#d9b6ff;
+}
+
+.final-line{
+    text-align:center;
+
+    margin-top:100px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(32px,5vw,58px);
+
+    color:white;
+
+    text-shadow:
+        0 0 35px rgba(180,100,255,.5);
+}
+
+.final-line span{
+    display:block;
+
+    margin-top:15px;
+
+    font-family:"DM Mono",monospace;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    color:#a99bb5;
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+   ========================================================= */
+
+.particle{
+    position:fixed;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    box-shadow:
+        0 0 10px #b66cff;
+
+    animation:particleFloat linear infinite;
+}
+
+@keyframes particleFloat{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+
+    15%{opacity:.8;}
+
+    85%{opacity:.8;}
+
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translate(-50%,30px);
+
+    padding:13px 20px;
+
+    border-radius:50px;
+
+    background:rgba(15,6,25,.8);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    font-family:"DM Mono",monospace;
+
+    font-size:10px;
+
+    color:#e9ddf2;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s;
+
+    z-index:9999;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .nav{
+        width:calc(100% - 25px);
+        justify-content:center;
+        overflow:auto;
+    }
+
+    .nav button{
+        padding:8px 9px;
+        font-size:8px;
+    }
+
+    .stats,
+    .truth-grid,
+    .paths{
+        grid-template-columns:1fr;
+    }
+
+    .universe{
+        height:430px;
+    }
+
+    .orbit{
+        width:280px;
+        height:280px;
+    }
+
+    .orbit.two{
+        width:380px;
+        height:380px;
+    }
+
+    .orbit.three{
+        width:480px;
+        height:480px;
+    }
+
+    .signal-box,
+    .distance-card,
+    .question-box{
+        padding:28px;
+    }
+
+    .letter-card{
+        padding:30px 23px;
+    }
+
+    .letter-body{
+        font-size:21px;
+    }
+
+    .letter-intro{
+        margin-bottom:40px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ======================================================
+     LOADER
+====================================================== -->
+
+<div id="loader">
+
+    <div class="loader-ring"></div>
+
+    <div class="loader-text">
+        INITIALIZING YOUR UNIVERSE...
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     STAR CANVAS
+====================================================== -->
+
+<canvas id="space"></canvas>
+
+
+<!-- ======================================================
+     NAV
+====================================================== -->
+
+<nav class="nav">
+
+    <button onclick="goTo('opening')">01</button>
+    <button onclick="goTo('signal')">02</button>
+    <button onclick="goTo('universeSection')">03</button>
+    <button onclick="goTo('effect')">04</button>
+    <button onclick="goTo('truths')">05</button>
+    <button onclick="goTo('stars')">06</button>
+    <button onclick="goTo('letter')">15</button>
+
+</nav>
+
+
+<!-- ======================================================
+     01 — AWAKENING
+====================================================== -->
+
+<section id="opening">
+
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
+    <div class="orbit three"></div>
+
+    <div>
+
+        <div class="eyebrow">
+            A little universe made for you
+        </div>
+
+        <div class="six">
+            06
+        </div>
+
+        <div class="opening-text">
+
+            <h2>
+                months of us.
+            </h2>
+
+            <p>
+                SCROLL TO ENTER THE UNIVERSE
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     02 — SIGNAL
+====================================================== -->
+
+<section id="signal">
+
+    <div class="container">
+
+        <div class="signal-box glass reveal">
+
+            <div class="eyebrow">
+                02 / SIGNAL
+            </div>
+
+            <div class="terminal">
+
+                > searching...
+                <br>
+
+                > scanning infinite possibilities...
+                <br>
+
+                > one person detected.
+                <br>
+
+                > identity confirmed:
+                <span style="color:#ff8bdc">
+                    ANANTA
+                </span>
+
+                <br>
+
+                > connection established
+                <span class="cursor"></span>
+
+            </div>
+
+            <div class="signal-main">
+
+                Some signals
+                <span class="gradient-text">
+                    feel like home.
+                </span>
+
+                <span class="signal-heart">
+                    ♡
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     03 — UNIVERSE
+====================================================== -->
+
+<section id="universeSection">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            03 / THE UNIVERSE
+        </div>
+
+        <h2 class="title">
+            You changed
+            <span class="gradient-text">
+                my universe.
+            </span>
+        </h2>
+
+        <p class="sub" style="margin-top:25px;">
+            Somewhere along the way, everything started feeling
+            a little different. Not louder. Not crazier.
+            Just... better.
+        </p>
+
+        <div class="universe glass" style="margin-top:40px;">
+
+            <div class="sun"></div>
+
+            <div class="planet-orbit">
+                <div class="planet"></div>
+            </div>
+
+            <div class="planet-orbit">
+                <div class="planet"></div>
+            </div>
+
+            <div class="planet-orbit">
+                <div class="planet"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     04 — ANANTA EFFECT
+====================================================== -->
+
+<section id="effect">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            04 / SCIENTIFICALLY UNEXPLAINABLE
+        </div>
+
+        <h2 class="title">
+            The Ananta
+            <span class="gradient-text">
+                Effect.
+            </span>
+        </h2>
+
+        <p class="sub" style="margin-top:25px;">
+            Extensive research has been conducted.
+            Results remain suspiciously cute.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat glass">
+                <span>MOOD</span>
+                <strong>↑ permanently better</strong>
+            </div>
+
+            <div class="stat glass">
+                <span>SMILES</span>
+                <strong>↑↑ uncontrollable</strong>
+            </div>
+
+            <div class="stat glass">
+                <span>OVERTHINKING</span>
+                <strong>↑↑↑ unfortunately 😭</strong>
+            </div>
+
+            <div class="stat glass">
+                <span>HEART AVAILABILITY</span>
+                <strong>0% — occupied.</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     05 — SIX TRUTHS
+====================================================== -->
+
+<section id="truths">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            05 / SIX LITTLE TRUTHS
+        </div>
+
+        <h2 class="title">
+            Things I don't
+            <span class="gradient-text">
+                say enough.
+            </span>
+        </h2>
+
+        <div class="truth-grid">
+
+            <div class="truth glass">
+                <span class="truth-num">01</span>
+
+                <p>
+                    Somehow, your name became my favourite notification.
+                </p>
+            </div>
+
+            <div class="truth glass">
+                <span class="truth-num">02</span>
+
+                <p>
+                    You can make an ordinary day feel completely different.
+                </p>
+            </div>
+
+            <div class="truth glass">
+                <span class="truth-num">03</span>
+
+                <p>
+                    We can turn absolutely nothing into a whole conversation.
+                </p>
+            </div>
+
+            <div class="truth glass">
+                <span class="truth-num">04</span>
+
+                <p>
+                    You annoy me professionally.
+                </p>
+            </div>
+
+            <div class="truth glass">
+                <span class="truth-num">05</span>
+
+                <p>
+                    Somehow, I still adore you.
+                </p>
+            </div>
+
+            <div class="truth glass">
+                <span class="truth-num">06</span>
+
+                <p>
+                    After six months, I'd still choose you.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     06 — PICK A STAR
+====================================================== -->
+
+<section id="stars">
+
+    <div class="container reveal">
+
+        <div style="text-align:center;">
+
+            <div class="eyebrow">
+                06 / PICK A STAR
+            </div>
+
+            <h2 class="title">
+                Maybe one of them
+                <span class="gradient-text">
+                    has your message.
+                </span>
+            </h2>
+
+        </div>
+
+        <div class="star-field glass" id="starField">
+
+            <div class="star-message glass" id="starMessage">
+
+                <p id="starText">
+                    You found one. ✦
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     07 — GRAVITY
+====================================================== -->
+
+<section id="gravity">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            07 / GRAVITY
+        </div>
+
+        <h2 class="title">
+            Some things
+            <span class="gradient-text">
+                just pull you in.
+            </span>
+        </h2>
+
+        <div class="gravity-box glass" style="margin-top:40px;">
+
+            <div class="gravity-heart"></div>
+
+            <div class="gravity-text">
+
+                <p class="sub" style="margin:auto;">
+                    No matter how far everything moves,
+                    some people somehow remain impossible
+                    to stop coming back to.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     08 — WISH
+====================================================== -->
+
+<section id="wish">
+
+    <div class="container reveal wish">
+
+        <div class="eyebrow">
+            08 / MAKE A WISH
+        </div>
+
+        <h2 class="title">
+            One wish.
+            <br>
+
+            <span class="gradient-text">
+                For us.
+            </span>
+        </h2>
+
+        <div class="wish-area">
+
+            <div class="shooting-star" id="shootingStar"></div>
+
+        </div>
+
+        <button class="magic-btn" onclick="makeWish()">
+            ✦ MAKE THE WISH
+        </button>
+
+        <div class="wish-reveal" id="wishReveal">
+
+            I hope we keep choosing each other.
+            Again and again.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     09 — LOVE.EXE
+====================================================== -->
+
+<section id="loveexe">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            09 / SYSTEM DIAGNOSTIC
+        </div>
+
+        <h2 class="title">
+            Love<span class="gradient-text">.exe</span>
+        </h2>
+
+        <div class="code-window glass" style="margin-top:45px;">
+
+            <div class="window-top">
+                HEART_SYSTEM / diagnostic.exe
+            </div>
+
+            <div class="code">
+
+                <div id="typing"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     10 — DISTANCE
+====================================================== -->
+
+<section id="distance">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            10 / DISTANCE TEST
+        </div>
+
+        <h2 class="title">
+            Distance is weird.
+            <br>
+
+            <span class="gradient-text">
+                Connection isn't.
+            </span>
+        </h2>
+
+        <div class="distance-card glass" style="margin-top:45px;">
+
+            <div class="distance-text">
+                TWO POINTS
+            </div>
+
+            <div class="connection">
+
+                <div class="point left"></div>
+
+                <div class="connection-line"></div>
+
+                <div class="point right"></div>
+
+            </div>
+
+            <div class="distance-text">
+
+                DISTANCE: ANNOYING
+                <br><br>
+                CONNECTION: STILL STRONG
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     11 — CHOOSE YOUR PATH
+====================================================== -->
+
+<section id="paths">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            11 / CHOOSE A PATH
+        </div>
+
+        <h2 class="title">
+            What kind of
+            <span class="gradient-text">
+                chaos are we?
+            </span>
+        </h2>
+
+        <div class="paths">
+
+            <div class="path glass" onclick="choosePath('cute')">
+
+                <div class="path-icon">✦</div>
+
+                <h3>
+                    Cute
+                </h3>
+
+                <p>
+                    proceed carefully
+                </p>
+
+            </div>
+
+            <div class="path glass" onclick="choosePath('chaos')">
+
+                <div class="path-icon">∞</div>
+
+                <h3>
+                    Chaos
+                </h3>
+
+                <p>
+                    probably accurate
+                </p>
+
+            </div>
+
+            <div class="path glass" onclick="choosePath('romantic')">
+
+                <div class="path-icon">♡</div>
+
+                <h3>
+                    Romantic
+                </h3>
+
+                <p>
+                    you already know
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     12 — QUESTION
+====================================================== -->
+
+<section id="question">
+
+    <div class="container reveal question">
+
+        <div class="eyebrow">
+            12 / ONE QUESTION
+        </div>
+
+        <div class="question-box glass">
+
+            <div class="question-text">
+
+                If I gave you
+                <span class="gradient-text">
+                    one more wish...
+                </span>
+
+            </div>
+
+            <button
+                class="magic-btn"
+                style="margin-top:35px;"
+                onclick="answerQuestion()">
+
+                ✦ REVEAL MINE
+
+            </button>
+
+            <div class="answer" id="answer"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     13 — SECRET PORTAL
+====================================================== -->
+
+<section id="portalSection">
+
+    <div class="container reveal portal-section">
+
+        <div class="eyebrow">
+            13 / CLASSIFIED
+        </div>
+
+        <h2 class="title">
+            There's something
+            <span class="gradient-text">
+                waiting here.
+            </span>
+        </h2>
+
+        <div
+            class="portal"
+            onclick="openPortal()">
+
+            <span>
+                ENTER
+            </span>
+
+        </div>
+
+        <p class="sub" style="margin:auto; text-align:center;">
+
+            Some things are easier to write
+            than to say.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     14 — TRANSITION
+====================================================== -->
+
+<section id="transition">
+
+    <div class="container reveal transition-section">
+
+        <div class="eyebrow">
+            14 / BEFORE THE LAST PAGE
+        </div>
+
+        <div class="transition-text">
+
+            And now...
+
+            <span class="gradient-text">
+                the part I actually wanted you to read.
+            </span>
+
+        </div>
+
+        <div class="transition-small">
+            SCROLL ONE LAST TIME
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     15 — BIG LETTER
+====================================================== -->
+
+<section id="letter">
+
+    <div class="letter-wrap">
+
+        <div class="letter-intro reveal">
+
+            <div class="eyebrow">
+                15 / THE LETTER
+            </div>
+
+            <div class="big-six">
+                06
+            </div>
+
+        </div>
+
+
+        <div class="letter-card reveal">
+
+            <div class="letter-label">
+                FOR ANANTA — SEPTEMBER 07, 2026
+            </div>
+
+            <h2 class="letter-title">
+
+                For the girl who became
+                <span class="gradient-text">
+                    my favourite part
+                </span>
+                of these six months.
+
+            </h2>
+
+
+            <div class="letter-body">
+
+                <p>
+                    Ananta,
+                </p>
+
+                <p>
+                    Six months sounds like just a number when you say
+                    it out loud. But when I actually stop and think
+                    about it, it feels like so much more than that.
+                </p>
+
+                <p>
+                    Somehow, six months became a whole little universe
+                    of its own — one that has you somewhere in almost
+                    every corner of it.
+                </p>
+
+                <p>
+                    And honestly, I don't think I ever realised when
+                    you started becoming such an important part of my
+                    everyday life.
+                </p>
+
+                <p>
+                    It wasn't one huge moment.
+                </p>
+
+                <p class="emphasis">
+                    I think it happened in hundreds of tiny ones.
+                </p>
+
+                <p>
+                    In the random conversations. The stupid jokes.
+                    The times we had absolutely nothing to talk about
+                    and somehow still didn't want the conversation
+                    to end.
+                </p>
+
+                <p>
+                    In the moments when seeing your name on my screen
+                    could instantly make an ordinary day feel a little
+                    better.
+                </p>
+
+                <p>
+                    In all those small things that probably didn't seem
+                    important at the time, but somehow became the things
+                    I remember the most.
+                </p>
+
+                <p>
+                    You became someone I could look forward to.
+                    Someone whose presence could change my mood without
+                    even trying.
+                </p>
+
+                <p>
+                    And somewhere between all of those little moments,
+                    you became something I never expected you to become.
+                </p>
+
+                <p class="emphasis">
+                    You became home.
+                </p>
+
+                <p>
+                    I know we're not perfect. We have our weird days,
+                    our misunderstandings, our overthinking, our
+                    unnecessary arguments and those conversations where
+                    one of us says “I'm fine” when we both know that's
+                    definitely not the complete story. 😭
+                </p>
+
+                <p>
+                    But maybe that's also what makes this ours.
+                </p>
+
+                <p>
+                    It isn't some perfectly written story where
+                    everything goes exactly right.
+                </p>
+
+                <p>
+                    It's two people learning each other, figuring
+                    things out, laughing at completely stupid things,
+                    getting annoyed, forgiving, understanding and
+                    somehow continuing to choose each other.
+                </p>
+
+                <p class="emphasis">
+                    And that's what I love about us.
+                </p>
+
+                <p>
+                    I don't need every day to be perfect.
+                    I just want the ordinary days to still have you
+                    somewhere in them.
+                </p>
+
+                <p>
+                    Because you have this strange ability to make
+                    normal things feel special without even trying.
+                </p>
+
+                <p>
+                    A conversation becomes something I'll remember.
+                    A random joke becomes an inside thing.
+                    A normal day suddenly becomes one I'm glad happened.
+                </p>
+
+                <p>
+                    And maybe you don't always realise how much the
+                    little things matter to me.
+                </p>
+
+                <p>
+                    But they do.
+                </p>
+
+                <p>
+                    More than you probably know.
+                </p>
+
+                <p>
+                    Six months later, I still look at everything we've
+                    become and think about how unexpectedly beautiful
+                    it is that I found you.
+                </p>
+
+                <p>
+                    I don't know exactly what the next six months will
+                    look like.
+                </p>
+
+                <p>
+                    I don't know what every chapter after this one will
+                    bring.
+                </p>
+
+                <p>
+                    But I know one thing.
+                </p>
+
+                <p class="emphasis">
+                    I want to keep writing them with you.
+                </p>
+
+                <p>
+                    So here's to six months of us.
+                </p>
+
+                <p>
+                    To everything we've learned.
+                    To all the laughter.
+                    To all the ridiculous conversations.
+                    To all the little things that somehow became big
+                    things.
+                </p>
+
+                <p>
+                    To the days that were easy, and the days that
+                    weren't.
+                </p>
+
+                <p>
+                    And to all the days we haven't reached yet.
+                </p>
+
+                <p class="emphasis">
+                    Thank you for becoming such a beautiful part of my
+                    life.
+                </p>
+
+                <p>
+                    Thank you for being you.
+                </p>
+
+                <p>
+                    And thank you for making these six months feel like
+                    something I never want to forget.
+                </p>
+
+                <p>
+                    Happy six months, Ananta.
+                </p>
+
+                <p class="emphasis">
+                    If I had to start these six months all over again,
+                    knowing everything I know now...
+                </p>
+
+                <p class="emphasis">
+                    I'd still find you.
+                </p>
+
+            </div>
+
+
+            <div class="signature">
+
+                — Varun ♡
+
+            </div>
+
+        </div>
+
+
+        <div class="final-line reveal">
+
+            Six months down.
+
+            <span>
+                AND A WHOLE UNIVERSE STILL WAITING.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     TOAST
+====================================================== -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("loader")
+            .classList.add("hide");
+
+    },1200);
+
+});
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+function goTo(id){
+
+    const element=document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+
+/* =========================================================
+   REVEAL ON SCROLL
+   ========================================================= */
+
+const observer=new IntersectionObserver(
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.12
+    }
+);
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el=>observer.observe(el));
+
+
+/* =========================================================
+   FLOATING PARTICLES
+   ========================================================= */
+
+for(let i=0;i<45;i++){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left=Math.random()*100+"%";
+
+    p.style.animationDuration=
+        (8+Math.random()*16)+"s";
+
+    p.style.animationDelay=
+        (-Math.random()*20)+"s";
+
+    p.style.opacity=
+        .2+Math.random()*.8;
+
+    document.body.appendChild(p);
+
+}
+
+
+/* =========================================================
+   STAR CANVAS
+   ========================================================= */
+
+const canvas=document.getElementById("space");
+
+const ctx=canvas.getContext("2d");
+
+let stars=[];
+
+function resizeCanvas(){
+
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+for(let i=0;i<180;i++){
+
+    stars.push({
+
+        x:Math.random(),
+        y:Math.random(),
+
+        size:
+            Math.random()*1.6+.2,
+
+        speed:
+            Math.random()*.00035+.00005,
+
+        alpha:
+            Math.random()*.8+.2
+
+    });
+
+}
+
+
+function animateStars(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    stars.forEach(star=>{
+
+        star.y-=star.speed;
+
+        if(star.y<0)
+            star.y=1;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            star.x*canvas.width,
+            star.y*canvas.height,
+            star.size,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle=
+            `rgba(220,190,255,${star.alpha})`;
+
+        ctx.fill();
+
+    });
+
+    requestAnimationFrame(animateStars);
+
+}
+
+animateStars();
+
+
+/* =========================================================
+   MOUSE PARALLAX
+   ========================================================= */
+
+let mouseX=0;
+let mouseY=0;
+
+document.addEventListener(
+    "mousemove",
+    e=>{
+
+        mouseX=
+            (e.clientX/window.innerWidth-.5);
+
+        mouseY=
+            (e.clientY/window.innerHeight-.5);
+
+        document.documentElement.style.setProperty(
+            "--mouse-x",
+            mouseX
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PICK A STAR
+   ========================================================= */
+
+const starField=
+    document.getElementById("starField");
+
+const starMessage=
+    document.getElementById("starMessage");
+
+const starText=
+    document.getElementById("starText");
+
+
+const starMessages=[
+
+    "You are one of my favourite reasons to smile. ✦",
+
+    "Somehow, you make ordinary days feel different. 💜",
+
+    "If this universe had a favourite person, it would be you.",
+
+    "You have no idea how often you cross my mind.",
+
+    "Six months later, and you're still my favourite notification.",
+
+    "You're a little bit of chaos and a lot of my favourite person.",
+
+    "I hope you know how special you are.",
+
+    "Some stars shine. You somehow do both. ✦",
+
+    "I would still choose you.",
+
+    "This star was obviously going to belong to you."
+];
+
+
+for(let i=0;i<18;i++){
+
+    const star=
+        document.createElement("button");
+
+    star.className="star-btn";
+
+    star.style.left=
+        (5+Math.random()*90)+"%";
+
+    star.style.top=
+        (5+Math.random()*85)+"%";
+
+    star.style.animationDelay=
+        Math.random()*2+"s";
+
+    star.addEventListener(
+        "click",
+        ()=>{
+
+            const message=
+                starMessages[
+                    Math.floor(
+                        Math.random()*starMessages.length
+                    )
+                ];
+
+            starText.textContent=message;
+
+            starMessage.classList.add("active");
+
+            setTimeout(
+                ()=>{
+                    starMessage.classList.remove("active");
+                },
+                3500
+            );
+
+        }
+    );
+
+    starField.appendChild(star);
+
+}
+
+
+/* =========================================================
+   WISH
+   ========================================================= */
+
+function makeWish(){
+
+    const shootingStar=
+        document.getElementById("shootingStar");
+
+    const reveal=
+        document.getElementById("wishReveal");
+
+    shootingStar.classList.remove("fly");
+
+    void shootingStar.offsetWidth;
+
+    shootingStar.classList.add("fly");
+
+    setTimeout(()=>{
+
+        reveal.classList.add("show");
+
+    },900);
+
+}
+
+
+/* =========================================================
+   LOVE.EXE TYPING
+   ========================================================= */
+
+const codeText=
+`HEART_SCAN.exe
+
+Person detected:
+> ANANTA
+
+Status:
+> IMPORTANT
+
+Attachment:
+> EXTREME
+
+Replacement:
+> NOT FOUND
+
+Heart availability:
+> 0%
+
+System conclusion:
+> SHE'S THE ONE.
+
+WARNING:
+> STOP SMILING AT THE SCREEN.
+
+`;
+
+let codeIndex=0;
+
+function typeCode(){
+
+    const box=
+        document.getElementById("typing");
+
+    if(codeIndex<codeText.length){
+
+        box.textContent+=
+            codeText.charAt(codeIndex);
+
+        codeIndex++;
+
+        setTimeout(
+            typeCode,
+            22
+        );
+
+    }
+
+}
+
+const codeObserver=
+    new IntersectionObserver(
+        entries=>{
+
+            if(
+                entries[0].isIntersecting &&
+                codeIndex===0
+            ){
+
+                typeCode();
+
+            }
+
+        },
+        {threshold:.3}
+    );
+
+codeObserver.observe(
+    document.getElementById("loveexe")
+);
+
+
+/* =========================================================
+   PATH CHOICE
+   ========================================================= */
+
+function choosePath(type){
+
+    let message="";
+
+    if(type==="cute"){
+
+        message=
+            "Cute route selected. You are dangerously adorable. 💜";
+
+    }
+
+    if(type==="chaos"){
+
+        message=
+            "Chaos route selected. Honestly, that checks out. 😭";
+
+    }
+
+    if(type==="romantic"){
+
+        message=
+            "Romantic route selected. I had a feeling you'd pick this one. ♡";
+
+    }
+
+    showToast(message);
+
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+function answerQuestion(){
+
+    const answer=
+        document.getElementById("answer");
+
+    answer.textContent=
+        "Mine would be simple: I wish for many more chapters with you. ♡";
+
+}
+
+
+/* =========================================================
+   PORTAL
+   ========================================================= */
+
+function openPortal(){
+
+    const portal=
+        document.querySelector(".portal");
+
+    portal.style.transform=
+        "scale(3)";
+
+    portal.style.opacity=
+        "0";
+
+    showToast(
+        "Access granted... one last page awaits. ✦"
+    );
+
+    setTimeout(()=>{
+
+        document
+            .getElementById("letter")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+        portal.style.transform="";
+        portal.style.opacity="";
+
+    },700);
+
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast=
+        document.getElementById("toast");
+
+    toast.textContent=message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer=
+        setTimeout(
+            ()=>{
+                toast.classList.remove("show");
+            },
+            2800
+        );
+
+}
+
+
+/* =========================================================
+   RANDOM SHOOTING STARS
+   ========================================================= */
+
+function randomShootingStar(){
+
+    const star=
+        document.createElement("div");
+
+    star.style.position="fixed";
+
+    star.style.width="130px";
+    star.style.height="1px";
+
+    star.style.background=
+        "linear-gradient(90deg,transparent,#fff,#bb72ff)";
+
+    star.style.top=
+        Math.random()*50+"%";
+
+    star.style.left=
+        "-160px";
+
+    star.style.transform=
+        "rotate(-25deg)";
+
+    star.style.zIndex="1";
+
+    star.style.pointerEvents="none";
+
+    document.body.appendChild(star);
+
+    star.animate(
+
+        [
+            {
+                left:"-160px",
+                opacity:0
+            },
+
+            {
+                opacity:1
+            },
+
+            {
+                left:"110%",
+                opacity:0
+            }
+        ],
+
+        {
+            duration:
+                1200+Math.random()*1200,
+
+            easing:"ease-out"
+        }
+
+    ).onfinish=()=>{
+
+        star.remove();
+
+    };
+
+}
+
+setInterval(
+    randomShootingStar,
+    4500
+);
+
+
+/* =========================================================
+   END
+========================================================= */
+
+</script>
+
+</body>
+</html>
